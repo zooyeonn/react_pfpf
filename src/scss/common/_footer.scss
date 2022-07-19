@@ -1,0 +1,93 @@
+footer {
+	width: 100%;
+	border-top: 1px solid #dadada;
+	padding: 40px 0px 0px 0px;
+	background-color: #fff;
+	article {
+		width: 1180px;
+		margin: 0 auto;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: top;
+		margin-bottom: 50px;
+		.info {
+			width: 50%;
+			margin-right: 20px;
+			border-right: 1px solid #dadada;
+			h3 {
+				font: bold 18px/1.4 'poppins';
+				color: #2c89bb;
+				margin-bottom: 20px;
+				letter-spacing: 1px;
+			}
+			ul {
+				li {
+					font: normal 14px/2 'poppins';
+					color: #777;
+				}
+			}
+		}
+		.customer {
+			width: 25%;
+			border-right: 1px solid #dadada;
+			margin-right: 20px;
+			h3 {
+				font: bold 18px/1.4 'poppins';
+				color: #2c89bb;
+				margin-bottom: 20px;
+				letter-spacing: 1px;
+			}
+			ul {
+				li {
+					font: normal 14px/2 'poppins';
+					color: #777;
+				}
+			}
+		}
+		.follow {
+			width: 25%;
+
+			h3 {
+				font: bold 18px/1.4 'poppins';
+				color: #2c89bb;
+				margin-bottom: 20px;
+				letter-spacing: 1px;
+			}
+			ul {
+				li {
+					cursor: pointer;
+					color: #777;
+					.fa-instagram {
+						font: bold 14px;
+						margin-right: 5px;
+					}
+					.fa-comment-dots {
+						font: bold 14px;
+						margin-right: 5px;
+					}
+					span {
+						font: normal 14px/2 'poppins';
+					}
+				}
+			}
+		}
+	}
+	.copy {
+		background-color: #dadada;
+		padding: 20px 20px;
+		display: flex;
+		justify-content: center;
+		align-items: top;
+		font: bold 12px/1.4 'poppins';
+		color: #2c89bb;
+		p {
+			width: 580px;
+		}
+		li {
+			float: left;
+			margin-right: 20px;
+			cursor: pointer;
+		}
+	}
+}

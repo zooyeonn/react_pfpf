@@ -1,0 +1,91 @@
+.Department {
+	.process {
+		width: 1180px;
+		margin-top: 200px;
+		margin: 0 auto;
+		position: relative;
+
+		h2 {
+			padding: 0px 0px 10px 0px;
+			width: 100%;
+			border-bottom: 4px solid;
+			color: #333;
+			font: bold 36px/1.4 'poppins';
+		}
+		.wrap {
+			margin: 0 auto;
+
+			.txt1 {
+				float: right;
+				width: 100%;
+				font: normal 16px/1.4 'poppins';
+				text-align: right;
+				margin-top: 50px;
+			}
+			> article {
+				img {
+					width: 1180px;
+					height: 700px;
+					margin-top: 30px;
+					filter: saturate(80%);
+				}
+			}
+			h3 {
+				width: 100%;
+				float: right;
+				text-align: right;
+				margin-top: 50px;
+				font: bold 48px/1.2 'poppins';
+			}
+			.txt2 {
+				float: left;
+				width: 100%;
+				font: normal 16px/1.4 'poppins';
+				text-align: left;
+				margin-top: 50px;
+				margin-bottom: 100px;
+			}
+		}
+	}
+	.team {
+		width: 1180px;
+
+		h2 {
+			padding: 0px 0px 10px 0px;
+			border-bottom: 4px solid;
+			color: #333;
+			font: bold 36px/1.4 'poppins';
+		}
+
+		.inner {
+			margin-top: 30px;
+			width: 100%;
+			border-bottom: 4px solid #222;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+		}
+
+		h3 {
+			font: bold 16px/1.2 'poppins';
+			color: #222;
+			letter-spacing: 1px;
+			margin-bottom: 5px;
+		}
+		p {
+			font: normal 14px/1.2 'poppins';
+			color: #666;
+			margin-bottom: 30px;
+		}
+
+		img {
+			width: 180px;
+			margin-right: 10px;
+			margin-bottom: 20px;
+			filter: saturate(0%);
+			&:hover {
+				filter: saturate(80%) sepia(40%);
+			}
+		}
+	}
+}

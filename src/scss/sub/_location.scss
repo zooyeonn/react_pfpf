@@ -1,0 +1,90 @@
+.Location {
+	.process {
+		width: 1180px;
+		margin-top: 200px;
+		margin: 0 auto;
+		position: relative;
+
+		h2 {
+			padding: 0px 0px 10px 0px;
+			width: 100%;
+			border-bottom: 4px solid;
+			color: #333;
+			font: bold 36px/1.4 'poppins';
+		}
+
+		.wrap {
+			margin: 0 auto;
+			width: 1180px;
+
+			.txt1 {
+				width: 100%;
+				margin-top: 50px;
+
+				h3 {
+					font: bold 28px/1.4 'poppins';
+				}
+				p {
+					font: normal 16px/1.4 'poppins';
+					color: #666;
+					margin-top: 20px;
+				}
+			}
+			article {
+				margin-top: 50px;
+				img {
+					width: 1180px;
+					height: 400px;
+					object-fit: cover;
+					filter: saturate(50%);
+				}
+			}
+			.txt2 {
+				display: flex;
+				margin-top: 30px;
+				h3 {
+					width: 40%;
+					font: bold 36px/1.4 'poppins';
+					letter-spacing: 1px;
+					text-align: right;
+					margin-right: 20%;
+				}
+				.inner {
+					border-left: 3px solid #333;
+					padding: 0 0 0 10px;
+					h4 {
+						font: bold 18px/1.4 'poppins';
+						color: #2c89bb;
+						margin-top: 10px;
+					}
+					p {
+						font: normal 14px/1.4 'poppins';
+						color: #666;
+					}
+				}
+			}
+		}
+	}
+	#map {
+		margin-top: 50px;
+		width: 100%;
+		height: 500px;
+		background: #000;
+	}
+	.txt3 {
+		margin-top: 30px;
+		h3 {
+			font: bold 24px/1.4 'poppins';
+			margin-bottom: 10px;
+		}
+		h4 {
+			font: bold 16px/1.4 'poppins';
+			color: #333;
+			margin-top: 5px;
+		}
+		p {
+			font: normal 16px/1.4 'poppins';
+			color: #666;
+		}
+	}
+}
