@@ -1,0 +1,126 @@
+.Community {
+	.process {
+		width: 1180px;
+		margin-top: 200px;
+		margin: 0 auto;
+		position: relative;
+		margin-bottom: 50px;
+
+		h2 {
+			padding: 0px 0px 10px 0px;
+			width: 100%;
+			border-bottom: 4px solid;
+			color: #333;
+			font: bold 36px/1.4 'poppins';
+		}
+	}
+	> .inner {
+		.inputBox {
+			width: 100%;
+			background-color: #ccc;
+			padding: 50px;
+			margin-bottom: 50px;
+			display: block;
+			justify-content: center;
+			text-align: center;
+			border-radius: 10px;
+
+			input[type='text'],
+			textarea {
+				width: 40%;
+				padding: 8px 10px;
+				border: 1px solid #aaa;
+				margin-bottom: 20px;
+				resize: none;
+				font: normal 12px/1.4 'poppins';
+			}
+
+			.editTxt {
+				width: 60%;
+				input[type='text'],
+				textarea {
+					width: 100%;
+					padding: 8px 10px;
+					margin-bottom: 20px;
+					background: #eaf9f9;
+					resize: none;
+					font: normal 12px/1.4 'poppins';
+				}
+			}
+
+			.btnSet {
+				button {
+					width: 150px;
+					height: 30px;
+					display: inline-block;
+					justify-content: center;
+					align-items: center;
+					border: none;
+					background: #777;
+					cursor: pointer;
+					margin-right: 20px;
+					font: bold 12px/1.4 'poppins';
+					color: #fff;
+					&:hover {
+						box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2) inset;
+					}
+				}
+			}
+		}
+
+		.showBox {
+			width: 100%;
+			border: 1px solid #bbb;
+			background-color: #ccc;
+			border-radius: 10px;
+			padding: 50px;
+
+			article {
+				background: #fff;
+				width: 70%;
+				padding: 20px 30px 20px 30px;
+				margin: 0 auto 50px;
+				border-radius: 10px;
+				display: block;
+				justify-content: center;
+				text-align: center;
+				box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+
+				.txt {
+					h2 {
+						font: bold 18px/1.4 'poppins';
+						color: #2c89bb;
+						margin-bottom: 10px;
+					}
+					p {
+						font: normal 16px/1.4 'poppins';
+						color: #000;
+						margin-bottom: 10px;
+						letter-spacing: -1px;
+					}
+				}
+
+				.btnSet {
+					display: block;
+					justify-content: center;
+					align-items: center;
+
+					button {
+						background: transparent;
+						margin: 10px;
+						cursor: pointer;
+						border: none;
+						&:nth-of-type(1) {
+							font: bold 14px/1.4 'poppins';
+							color: #000;
+						}
+						&:nth-of-type(2) {
+							font: bold 14px/1.4 'poppins';
+							color: #000;
+						}
+					}
+				}
+			}
+		}
+	}
+}

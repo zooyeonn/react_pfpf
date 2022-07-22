@@ -1,0 +1,113 @@
+.Members {
+	figure {
+		background: #000;
+	}
+	.process {
+		width: 1180px;
+		margin-top: 200px;
+		margin: 0 auto;
+		position: relative;
+		margin-bottom: 50px;
+
+		h2 {
+			padding: 0px 0px 10px 0px;
+			width: 100%;
+			border-bottom: 4px solid;
+			color: #333;
+			font: bold 36px/1.4 'poppins';
+		}
+	}
+
+	.bg {
+		position: absolute;
+		width: 100%;
+		height: 1000px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity: 20%;
+		}
+	}
+
+	.inner {
+		overflow: hidden;
+		height: 100%;
+		.box1 {
+			float: left;
+			fieldset {
+				position: relative;
+				border: none;
+				width: 100%;
+				table {
+					width: 100%;
+					border: none;
+					margin: 30px 30px 0px 120px;
+					th {
+						width: 20%;
+						border: none;
+						padding: 15px 30px 0px;
+						text-align: left;
+						font: bold 18px/1.4 'poppins';
+						letter-spacing: -1px;
+						color: #2c89bb;
+						&:last-child {
+							text-align: center;
+						}
+						input[type='reset'],
+						input[type='submit'] {
+							border: none;
+							width: 100px;
+							height: 40px;
+							display: inline-block;
+							justify-content: center;
+							align-items: center;
+							margin: 30px 100px 50px 30px;
+							font: bold 16px/1.4 'poppins';
+							color: #333;
+							border-radius: 10px;
+							cursor: pointer;
+							&:hover {
+								border: 1px solid #aaa;
+								background-color: #fff;
+								box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1) inset;
+							}
+						}
+					}
+					td {
+						border: none;
+						padding: 15px 30px;
+						input[type='text'],
+						input[type='password'],
+						select,
+						textarea {
+							width: 80%;
+							border: 1px solid #aaa;
+							margin-top: 20px;
+							padding: 6px 10px;
+							resize: none;
+							font: 12px/1.4 'poppins';
+						}
+						label {
+							margin-right: 6px;
+							font: bold 14px/1.4 'poppins';
+							color: #000;
+							letter-spacing: -1px;
+						}
+						input[type='radio'],
+						input[type='checkbox'] {
+							margin-right: 15px;
+							margin-top: 20px;
+						}
+						.err {
+							display: block;
+							font: 12px/1.2 'poppins';
+							color: rgb(255, 50, 50);
+							margin-top: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,5 +1,6 @@
 //npm i react-masonry-component
 import Layout from '../common/Layout';
+import Popup from '../common/Popup';
 import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import Masonry from 'react-masonry-component';
@@ -10,6 +11,8 @@ function Gallery() {
 	const [Items, setItems] = useState([]);
 	const [Loading, setLoading] = useState(true);
 	const [EnableClick, setEnableClick] = useState(true);
+	const [Open, setOpen] = useState(false);
+	const [Index, setIndex] = useState(0);
 	const masonryOptions = { transitionDuration: '0.5s' };
 
 	/*
@@ -47,7 +50,7 @@ function Gallery() {
 		await axios.get(url).then((json) => {
 			console.log(json.data.photos.photo);
 			if (json.data.photos.photo.length === 0)
-				return alert('해당 검색어의 결과 이미지가 없습니다.');
+				return alert('해당되는 이미지를 찾을 수 없습니다');
 			setItems(json.data.photos.photo);
 		});
 
@@ -65,7 +68,7 @@ function Gallery() {
 		const result = input.current.value.trim();
 		input.current.value = '';
 
-		if (!result) return alert('검색어를 입력하세요.');
+		if (!result) return alert('검색어를 입력해 주세요');
 		if (!EnableClick) return;
 		setEnableClick(false);
 		setLoading(true);
@@ -81,102 +84,120 @@ function Gallery() {
 	}, []);
 
 	return (
-		<Layout name={'Gallery'}>
-			<div className='process'>
-				<h2>Gallery</h2>
-			</div>
+		<>
+			<Layout name={'Gallery'}>
+				<div className='process'>
+					<h2>Gallery</h2>
+				</div>
+				<div className='txt'>
+					<p>
+						National Geographic stories take you on a journey that's always
+						enlightening, often surprising, and unfailingly fascinationg. Lorem
+						ipsum dolor sit amet consectetur adipisicing elit.
+					</p>
+				</div>
+				{Loading && (
+					<img
+						className='loading'
+						src={`${process.env.PUBLIC_URL}/img/loading.gif`}
+					/>
+				)}
+				<div className='box'>
+					<div className='btn'>
+						<button
+							onClick={() => {
+								if (!EnableClick) return;
+								setEnableClick(false);
+								setLoading(true);
+								frame.current.classList.remove('on');
+								getFlickr({ type: 'interest' });
+							}}>
+							Interest Gallery
+						</button>
 
-			{Loading && (
-				<img
-					className='loading'
-					src={`${process.env.PUBLIC_URL}/img/loading.gif`}
-				/>
-			)}
-			<button
-				onClick={() => {
-					if (!EnableClick) return;
-					setEnableClick(false);
-					setLoading(true);
-					frame.current.classList.remove('on');
-					getFlickr({ type: 'interest' });
-				}}>
-				Interest Gallery
-			</button>
-			<button
-				onClick={() => {
-					if (!EnableClick) return;
-					setEnableClick(false);
-					setLoading(true);
-					frame.current.classList.remove('on');
-					getFlickr({ type: 'search', tags: 'snow' });
-				}}>
-				Search Gallery
-			</button>
-			<button
-				onClick={() => {
-					if (!EnableClick) return;
-					setEnableClick(false);
-					setLoading(true);
-					frame.current.classList.remove('on');
-					getFlickr({ type: 'user', user: '195947625@N02' });
-				}}>
-				My Gallery
-			</button>
+						<button
+							onClick={() => {
+								if (!EnableClick) return;
+								setEnableClick(false);
+								setLoading(true);
+								frame.current.classList.remove('on');
+								getFlickr({ type: 'user', user: '195947625@N02' });
+							}}>
+							My Gallery
+						</button>
+					</div>
 
-			<div className='searchBox'>
-				<input
-					type='text'
-					ref={input}
-					placeholder='검색어를 입력하세요.'
-					onKeyUp={(e) => {
-						if (e.key === 'Enter') showSearch();
-					}}
-				/>
-				<button onClick={showSearch}>Search</button>
-			</div>
+					<div className='searchBox'>
+						<input
+							type='text'
+							ref={input}
+							placeholder='Enter a search term'
+							onKeyUp={(e) => {
+								if (e.key === 'Enter') showSearch();
+							}}
+						/>
+						<button onClick={showSearch}>SEARCH</button>
+					</div>
+				</div>
 
-			<div className='frame' ref={frame}>
-				<Masonry elementType={'div'} options={masonryOptions}>
-					{Items.map((item, idx) => {
-						return (
-							<article key={idx}>
-								<div className='inner'>
-									<div className='pic'>
-										<img
-											src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
-											alt={item.title}
-										/>
-									</div>
-									<h2>{item.title}</h2>
-									<div className='profile'>
-										<img
-											src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
-											alt={item.owner}
-											onError={(e) => {
-												e.target.setAttribute(
-													'src',
-													'https://www.flickr.com/images/buddyicon.gif'
-												);
-											}}
-										/>
-										<span
-											onClick={(e) => {
-												if (!EnableClick) return;
-												setEnableClick(true);
-												frame.current.classList.remove('on');
-
-												getFlickr({ type: 'user', user: e.target.innerText });
+				<div className='frame' ref={frame}>
+					<Masonry elementType={'div'} options={masonryOptions}>
+						{Items.map((item, idx) => {
+							return (
+								<article key={idx}>
+									<div className='inner'>
+										<div
+											className='pic'
+											onClick={() => {
+												setOpen(true);
+												setIndex(idx);
 											}}>
-											{item.owner}
-										</span>
+											<img
+												src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
+												alt={item.title}
+											/>
+										</div>
+										<h2>{item.title}</h2>
+										<div className='profile'>
+											<img
+												src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
+												alt={item.owner}
+												onError={(e) => {
+													e.target.setAttribute(
+														'src',
+														'https://www.flickr.com/images/buddyicon.gif'
+													);
+												}}
+											/>
+											<span
+												onClick={(e) => {
+													if (!EnableClick) return;
+													setEnableClick(true);
+													setLoading(true);
+													frame.current.classList.remove('on');
+
+													getFlickr({ type: 'user', user: e.target.innerText });
+												}}>
+												{item.owner}
+											</span>
+										</div>
 									</div>
-								</div>
-							</article>
-						);
-					})}
-				</Masonry>
-			</div>
-		</Layout>
+								</article>
+							);
+						})}
+					</Masonry>
+				</div>
+			</Layout>
+
+			{Open && (
+				<Popup setOpen={setOpen}>
+					<img
+						src={`https://live.staticflickr.com/${Items[Index].server}/${Items[Index].id}_${Items[Index].secret}_b.jpg`}
+						alt={Items[Index].title}
+					/>
+				</Popup>
+			)}
+		</>
 	);
 }
 

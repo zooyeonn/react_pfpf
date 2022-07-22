@@ -1,4 +1,7 @@
 import Layout from '../common/Layout';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useRef, useEffect } from 'react';
 
 function Location() {
@@ -79,12 +82,24 @@ function Location() {
 					</div>
 				</div>
 				<div id='map' ref={container}></div>
-				<div className='txt3'>
-					<h3>Contact Us</h3>
-					<h4>National Geographic</h4>
-					<p>104, Jong-ro, Jongno-gu, Seoul, Republic of Korea</p>
-					<p>TEL: 1234-5678 / FAX 1234-5678</p>
-					<p>E-MAIL: National@Geographic.co.kr</p>
+				<div className='bottom'>
+					<div className='txt3'>
+						<h3>Contact Us</h3>
+						<h4>National Geographic</h4>
+						<p>104, Jong-ro, Jongno-gu, Seoul, Republic of Korea</p>
+						<p>TEL: 1234-5678 / FAX 1234-5678</p>
+						<p>E-MAIL: National@Geographic.co.kr</p>
+					</div>
+					<div className='box1'>
+						<FontAwesomeIcon icon={faPhone} />
+						<h3>Phone</h3>
+						<p>Tel: 1234-5678 / FAX 1234-5678</p>
+					</div>
+					<div className='box2'>
+						<FontAwesomeIcon icon={faEnvelope} />
+						<h3>E-Mail</h3>
+						<p>National@Geographic.co.kr</p>
+					</div>
 				</div>
 			</Layout>
 		</>

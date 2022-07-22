@@ -14,13 +14,73 @@
 			font: bold 36px/1.4 'poppins';
 		}
 	}
+
+	.txt {
+		p {
+			margin-bottom: 80px;
+			font: 16px/1.4 'poppins';
+			letter-spacing: 1px;
+			text-align: right;
+			padding: 0px 0px 0px 680px;
+		}
+	}
 	.loading {
-		position: relative;
-		top: 50px;
+		position: absolute;
+		top: 400px;
 		left: 50%;
 		width: 100px;
 		height: 100px;
 		transform: translateX(-50%);
+	}
+
+	.box {
+		overflow: hidden;
+		margin-bottom: 30px;
+		.btn {
+			position: relative;
+			float: left;
+
+			button {
+				font: bold 14px/1.2 'poppins';
+				background: #dadada;
+				color: #2c89bb;
+				border-radius: 10px;
+				border: none;
+				width: 150px;
+				height: 30px;
+				margin: 0 auto;
+				margin: 0px 30px 30px 0px;
+				cursor: pointer;
+				box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+				&:hover {
+					box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1) inset;
+				}
+			}
+		}
+
+		.searchBox {
+			float: right;
+			text-align: right;
+			width: 500px;
+
+			input[type='text'],
+			textarea {
+				width: 50%;
+				border: none;
+				border-bottom: 1px solid #aaa;
+				padding-bottom: 5px;
+				margin-right: 10px;
+				font: normal 12px/1.2 'poppin';
+			}
+
+			button {
+				background: #fff;
+				font: bold 16px/1.4 'poppins';
+				color: #2c89bb;
+				border: none;
+				cursor: pointer;
+			}
+		}
 	}
 	.frame {
 		transition: transform 0.5s, opacity 0.5s;
@@ -59,16 +119,16 @@
 				}
 
 				h2 {
-					font: normal 14px/1.2 'arial';
+					font: bold 14px/1.2 'poppins';
 					color: #777;
-					margin-bottom: 30px;
+					margin-bottom: 20px;
 				}
 				.profile {
 					display: flex;
 					align-items: center;
 
 					img {
-						width: 40px;
+						width: 30px;
 						border-radius: 50%;
 						margin-right: 10px;
 					}
@@ -76,10 +136,10 @@
 						color: #888;
 						cursor: pointer;
 						transition: 0.5s;
-						font-size: 12px;
+						font: 12px 'poppins';
 
 						&:hover {
-							color: aqua;
+							color: #2c89bb;
 						}
 					}
 				}

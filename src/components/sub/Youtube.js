@@ -1,9 +1,12 @@
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 
 function Youtube() {
+	const path = process.env.PUBLIC_URL;
 	const [Vids, setVids] = useState([]);
 	const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
@@ -21,8 +24,20 @@ function Youtube() {
 	return (
 		<>
 			<Layout name={'Youtube'}>
-				<div className='process'>
+				<div className='process1'>
 					<h2>Youtube</h2>
+				</div>
+				<div className='process2'>
+					<p>
+						National Geographic stories take you on a journey that's always
+						enlightening, often surprising, and unfailingly fascinationg. Lorem
+						ipsum dolor sit amet consectetur adipisicing elit. Et iure iusto nam
+						non voluptates aut illum ullam atque nostrum voluptatem? Lorem ipsum
+						dolor sit amet consectetur adipisicing elit. Esse, nisi!
+					</p>
+				</div>
+				<div className='process3'>
+					<img src={`${path}/img/vid.jpg`} alt='' />
 				</div>
 				{Vids.map((vid, idx) => {
 					const tit = vid.snippet.title;
